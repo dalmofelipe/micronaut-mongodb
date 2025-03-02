@@ -1,4 +1,4 @@
-package com.dalmofelipe;
+package com.dalmofelipe.mongodb;
 
 import io.micronaut.runtime.Micronaut;
 

@@ -1,4 +1,4 @@
-package com.dalmofelipe;
+package com.dalmofelipe.mongodb;
 
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;

@@ -1,0 +1,20 @@
+@host=http://localhost:8080
+
+
+###
+GET {{host}}/comments HTTP/1.1
+
+
+###
+GET {{host}}/comments/67c3a0bb1b3d8b4a3ae2541d HTTP/1.1
+
+
+###
+POST {{host}}/comments HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "1",
+  "content": "lorem ipsum",
+  "author": "1"
+}

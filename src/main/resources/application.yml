@@ -3,3 +3,11 @@
 micronaut:
   application:
     name: micronaut-mongodb
+  server:
+    port: 8080
+
+mongodb:
+  uri: mongodb://admin:123123@localhost:27017/micronaut?authSource=admin
+  database: micronaut
+  username: admin
+  password: 123123
