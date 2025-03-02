@@ -18,3 +18,14 @@ Content-Type: application/json
   "content": "lorem ipsum",
   "author": "1"
 }
+
+
+
+
+###
+GET {{host}}/products HTTP/1.1
+
+
+###
+GET {{host}}/products/12123 HTTP/1.1
+
