@@ -6,14 +6,13 @@ import com.dalmofelipe.mongodb.core.domain.Product;
 import com.dalmofelipe.mongodb.core.ports.incoming.ProductUseCase;
 import com.dalmofelipe.mongodb.core.ports.outgoing.ProductRepository;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Singleton;
-
-@Singleton
 public class ProductService implements ProductUseCase {
 
-    @Inject
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     @Override
     public Product createProduct(Product product) {
