@@ -7,7 +7,7 @@ import com.dalmofelipe.mongodb.core.service.ProductService;
 import io.micronaut.context.annotation.Factory;
 import jakarta.inject.Singleton;
 
-// Config necessário para injetar dependências no Micronaut
+// Config necessário para o Micronaut injetar a ProductUseCase na ProductController
 @Factory
 public class ProductConfig {
     

@@ -1,9 +1,9 @@
-package com.dalmofelipe.mongodb.infrastructure.adapters.outgoing.mongodb;
+package com.dalmofelipe.mongodb.infrastructure.adapters.outgoing.mongodb.product;
 
 import com.dalmofelipe.mongodb.core.domain.Product;
 import com.dalmofelipe.mongodb.infrastructure.adapters.incoming.rest.dto.ProductDto;
 
-public class ProductEntityMapper {
+public class ProductMapper {
 
     public static ProductEntity toEntity(Product product) {
         ProductEntity entity = new ProductEntity();

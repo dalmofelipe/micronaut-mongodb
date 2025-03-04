@@ -1,4 +1,4 @@
-package com.dalmofelipe.mongodb.infrastructure.adapters.outgoing.mongodb;
+package com.dalmofelipe.mongodb.infrastructure.adapters.outgoing.mongodb.product;
 
 import io.micronaut.data.annotation.GeneratedValue;
 import io.micronaut.data.annotation.Id;

@@ -1,4 +1,4 @@
-package com.dalmofelipe.mongodb.infrastructure.adapters.outgoing.mongodb;
+package com.dalmofelipe.mongodb.infrastructure.adapters.outgoing.mongodb.product;
 
 import io.micronaut.data.mongodb.annotation.MongoRepository;
 import io.micronaut.data.repository.CrudRepository;

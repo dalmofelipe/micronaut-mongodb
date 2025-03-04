@@ -5,7 +5,7 @@ import java.util.List;
 import com.dalmofelipe.mongodb.core.domain.Product;
 import com.dalmofelipe.mongodb.core.ports.incoming.ProductUseCase;
 import com.dalmofelipe.mongodb.infrastructure.adapters.incoming.rest.dto.ProductDto;
-import com.dalmofelipe.mongodb.infrastructure.adapters.outgoing.mongodb.ProductEntityMapper;
+import com.dalmofelipe.mongodb.infrastructure.adapters.outgoing.mongodb.product.ProductMapper;
 
 import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
@@ -23,17 +23,17 @@ public class ProductController {
 
     @Post
     public ProductDto createProduct(@Valid @Body ProductDto dto) {
-        Product product = ProductEntityMapper.toDomain(dto);
+        Product product = ProductMapper.toDomain(dto);
 
         Product productSaved = productUseCase.createProduct(product);
 
-        return ProductEntityMapper.toDto(productSaved);
+        return ProductMapper.toDto(productSaved);
     }
 
     @Get
     public List<ProductDto> getAllProducts() {
         return productUseCase.getAllProducts().stream()
-            .map(ProductEntityMapper::toDto)
+            .map(ProductMapper::toDto)
             .toList();
     }
 
@@ -41,7 +41,7 @@ public class ProductController {
     public ProductDto getProduct(String id) {
         Product productFromDb = productUseCase.getProduct(id);
 
-        return ProductEntityMapper.toDto(productFromDb);
+        return ProductMapper.toDto(productFromDb);
     }
 
     @Delete("/{id}")

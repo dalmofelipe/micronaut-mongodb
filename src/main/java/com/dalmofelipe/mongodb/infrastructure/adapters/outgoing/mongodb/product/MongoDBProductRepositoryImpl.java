@@ -1,14 +1,14 @@
-package com.dalmofelipe.mongodb.infrastructure.adapters.outgoing.mongodb;
+package com.dalmofelipe.mongodb.infrastructure.adapters.outgoing.mongodb.product;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import com.dalmofelipe.mongodb.core.domain.Product;
 import com.dalmofelipe.mongodb.core.ports.outgoing.ProductRepository;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Singleton
 public class MongoDBProductRepositoryImpl implements ProductRepository {
@@ -18,22 +18,22 @@ public class MongoDBProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Product save(Product product) {
-        ProductEntity entity = ProductEntityMapper.toEntity(product);
+        ProductEntity entity = ProductMapper.toEntity(product);
         entity = mongoDBProductRepository.save(entity);
-        return ProductEntityMapper.toDomain(entity);
+        return ProductMapper.toDomain(entity);
     }
 
     @Override
     public List<Product> findAll() {
         return mongoDBProductRepository.findAll().stream()
-            .map(ProductEntityMapper::toDomain)
+            .map(ProductMapper::toDomain)
             .collect(Collectors.toList());
     }
 
     @Override
     public Optional<Product> findById(String id) {
         return mongoDBProductRepository.findById(id)
-            .map(ProductEntityMapper::toDomain);
+            .map(ProductMapper::toDomain);
     }
 
     @Override
